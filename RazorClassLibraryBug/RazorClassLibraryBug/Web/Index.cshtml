@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h2>
+    Configuration
+</h2>
+
+<p>
+    In startup: <code>services.AddRazorPages().WithRazorPagesRoot("/Web");</code>
+</p>
+
+<h2>
+    Pages
+</h2>
+
+<ul>
+    <li>
+        <a href="/RazorClassLibraryNotWorkingPage">
+            A page in a RCL library within the "Pages" directory (NOT WORKING)
+        </a>
+    </li>
+    <li>
+        <a href="/RazorClassLibraryWorkingPage">
+            A page in a RCL library within the "Web" directory (WORKING)
+        </a>
+    </li>
+</ul>
+
+
+<h2>
+    Areas
+</h2>
+
+<ul>
+    <li>
+        <a href="/RazorClassLibraryNotWorking">
+            A page in a RCL library within "Areas/RazorClassLibraryNotWorking/Pages" directory (WORKING)
+        </a>
+    </li>
+    <li>
+        <a href="/RazorClassLibraryWorking">
+            A page in a RCL library within "Areas/RazorClassLibraryWorking/Pages" directory (WORKING)
+        </a>
+    </li>
+</ul>
+
+<h2>
+    Conclusion
+</h2>
+
+<p>
+    The name of parent directory in which the RazorPages must be contained is not consistent if <code>services.AddRazorPages().WithRazorPagesRoot([PATH])</code> 
+    is called. The <code>WithRazorPagesRoot([PATH])</code> should not affect the structure of RCLs.
+</p>
